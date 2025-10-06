@@ -1,0 +1,136 @@
+@use "../abstracts" as *;
+.popUp{
+    @include Position($type: fixed, $t:0, $l:0);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.531);
+    z-index: 1010;
+    overflow: auto;
+    display: none;
+    .box{
+        position: relative;
+        width: 70%;
+        margin: auto;
+        margin-top: 15px;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        color: black;
+        .head{
+            
+            padding: 15px;
+            i{
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+        
+        .body .row1 {
+            .boxinfo {
+                text-align: start;
+            }
+            .boxinfo2 {
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        }
+        .body .row2{
+            text-align: start;
+        }
+        
+    }
+
+}
+.popUp[data-popup="Video"]{
+    .box{
+        box-shadow: none;
+        iframe{
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            @include responsive(350){
+                width: 100%;
+            }
+            @include responsive(850) {
+                width: 600px;
+                height:400px;
+            }
+        }
+    }
+}
+.popUp[data-popup="sector"]{
+    .body{
+        padding: 10px;
+        
+    }
+    .col1{
+        width: 300px;
+        margin: auto;
+        .conBox {
+            width: 100%;
+            margin: auto;
+                background-color: rgba(0, 128, 0, 0.539);
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 10px;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+        
+                p {
+                    width: 100%;
+                    background-color: rgba(0, 128, 0, 0.759);
+                    margin-bottom: 10px;
+                    padding: 0;
+                    color: white!important;
+                }
+        
+                img {
+                    width: 70px;
+                    margin-block: 15px;
+        
+                }
+        
+        
+            }
+    }
+}
+.popUp[data-popup="language"]{
+    .box{
+        @include Position($type: absolute, $t: 0, $r: 0);
+        border-radius: 10px 0px 0px 10px;
+        padding: 10px;
+        i.fa-xmark{
+            @include Position($type: relative, $t: 2px, $l: 40%);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .langsection{
+            padding: 10px;
+            text-align: start;
+        }
+        .langsection:nth-of-type(odd) {
+            h4{
+                color: $firstColor;
+            }
+            li{
+                color: $firstColor;
+            }
+        }
+        .langsection:nth-of-type(even) {
+            h4 {
+                color: $secoundColor;
+            }
+
+            li {
+                color: $secoundColor;
+            }
+        }
+    }
+}

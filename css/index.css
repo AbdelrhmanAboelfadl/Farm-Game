@@ -1,0 +1,271 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+}
+
+@keyframes shapes-et721zmd {
+  33% {
+    inset: -11.2px;
+    transform: rotate(0deg);
+  }
+  66% {
+    inset: -11.2px;
+    transform: rotate(90deg);
+  }
+  100% {
+    inset: 0;
+    transform: rotate(90deg);
+  }
+}
+#Game {
+  overflow: hidden;
+}
+#Game::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.327);
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+}
+#Game {
+  background-image: url("../images/42341.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#Game .chickenCon {
+  width: 100%;
+  position: relative;
+  background-image: url("../images/aakx_usr5_220301.jpg");
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: initial;
+  justify-content: center;
+  align-items: center;
+  gap: 300px;
+}
+@media (max-width: 1300px) {
+  #Game .chickenCon {
+    gap: 50px;
+  }
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #Game .chickenCon {
+    gap: 120px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Game .chickenCon {
+    gap: 200px;
+  }
+}
+#Game .chickenCon .chicken {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#Game .chickenCon .chicken img {
+  width: 100px;
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 1300px) {
+  #Game .chickenCon .chicken img {
+    width: 70px;
+  }
+}
+#Game .chickenCon .chicken i {
+  color: white;
+  z-index: 2;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 1300px) {
+  #Game .chickenCon .chicken i {
+    font-size: 32px;
+  }
+}
+#Game .start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.569);
+  z-index: 1010;
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #Game .start h5 {
+    font-size: 15px !important;
+  }
+}
+#Game .start {
+  display: flex;
+  flex-direction: initial;
+  justify-content: center;
+  align-items: center;
+}
+#Game .start .startCon {
+  width: 100%;
+  background-image: linear-gradient(135deg, #FFA8A8 10%, #FCFF00 100%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: initial;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+  transition: all 0.5s;
+  position: relative;
+}
+#Game .start .startCon::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.377);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  transition: all 1s;
+}
+#Game .start .startCon:hover {
+  color: white;
+}
+#Game .start .startCon:hover::before {
+  opacity: 1;
+}
+#Game .start .startCon:hover .shapes {
+  transform: scale(0.9);
+}
+#Game .start .startCon .shapes {
+  width: 35px;
+  height: 35px;
+  color: rgb(0, 222, 0);
+  transform: scale(0.6);
+  position: relative;
+  background: conic-gradient(from 134deg at top, currentColor 92deg, rgba(0, 0, 0, 0) 0) top, conic-gradient(from -46deg at bottom, currentColor 92deg, rgba(0, 0, 0, 0) 0) bottom;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  transition: all 0.5s;
+}
+#Game .start .startCon .shapes:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from -135deg at top 0 left 24.4px, rgba(0, 0, 0, 0), currentColor 1deg 90deg, rgba(0, 0, 0, 0) 0), conic-gradient(from -45deg at right 0 top 24.4px, rgba(0, 0, 0, 0), currentColor 1deg 90deg, rgba(0, 0, 0, 0) 0), conic-gradient(from 45deg at bottom 0 right 24.4px, rgba(0, 0, 0, 0), currentColor 1deg 90deg, rgba(0, 0, 0, 0) 0), conic-gradient(from 135deg at left 0 bottom 24.4px, rgba(0, 0, 0, 0), currentColor 1deg 90deg, rgba(0, 0, 0, 0) 0);
+  animation: shapes-et721zmd 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+#Game .basket {
+  width: 100%;
+  position: absolute;
+  bottom: 80px;
+  display: flex;
+  flex-direction: initial;
+  justify-content: center;
+  align-items: center;
+}
+#Game .basket .basketCon {
+  display: flex;
+  flex-direction: initial;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: fit-content;
+}
+#Game .basket .basketCon img {
+  width: 200px;
+}
+@media (max-width: 1300px) {
+  #Game .basket .basketCon img {
+    width: 150px;
+  }
+}
+#Game .basket .basketCon h4 {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+}
+@media (max-width: 1300px) {
+  #Game .basket .basketCon h4 {
+    font-size: 23px;
+  }
+}
+#Game .borkenEgg {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  flex-direction: initial;
+  justify-content: center;
+  align-items: center;
+  gap: 290px;
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #Game .borkenEgg {
+    gap: 130px !important;
+  }
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #Game .borkenEgg {
+    gap: 210px !important;
+  }
+}
+#Game .borkenEgg img {
+  width: 100px;
+  opacity: 0;
+}
+@media (max-width: 1300px) {
+  #Game .borkenEgg img {
+    width: 65px;
+  }
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #Game .borkenEgg img {
+    width: 70px;
+    gap: 150px !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  #Game .borkenEgg img {
+    gap: 200px;
+  }
+}
+#Game .borkenEgg img.show {
+  opacity: 1;
+}
+
+#Game nav {
+  background-image: linear-gradient(135deg, #FFA8A8 10%, #FCFF00 100%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+@media (max-width: 1300px) {
+  #Game nav h5 {
+    font-size: 15px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
