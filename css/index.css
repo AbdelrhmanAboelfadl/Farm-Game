@@ -22,6 +22,7 @@ body {
 }
 #Game {
   overflow: hidden;
+  position: relative;
 }
 #Game::before {
   content: "";
@@ -103,7 +104,7 @@ body {
   }
 }
 #Game .start {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -111,7 +112,7 @@ body {
   background-color: rgba(0, 0, 0, 0.569);
   z-index: 1010;
 }
-@media (min-width: 577px) and (max-width: 1300px) {
+@media (max-width: 1300px) {
   #Game .start h5 {
     font-size: 15px !important;
   }
@@ -194,11 +195,11 @@ body {
   width: fit-content;
 }
 #Game .basket .basketCon img {
-  width: 200px;
+  width: 150px;
 }
 @media (max-width: 1300px) {
   #Game .basket .basketCon img {
-    width: 150px;
+    width: 110px;
   }
 }
 #Game .basket .basketCon h4 {
@@ -211,7 +212,7 @@ body {
 }
 @media (max-width: 1300px) {
   #Game .basket .basketCon h4 {
-    font-size: 23px;
+    font-size: 20px;
   }
 }
 #Game .borkenEgg {
@@ -224,14 +225,19 @@ body {
   align-items: center;
   gap: 290px;
 }
-@media (min-width: 577px) and (max-width: 1300px) {
+@media (max-width: 1300px) {
   #Game .borkenEgg {
-    gap: 130px !important;
+    gap: 60px !important;
   }
 }
 @media (min-width: 577px) and (max-width: 1300px) {
   #Game .borkenEgg {
-    gap: 210px !important;
+    gap: 120px !important;
+  }
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  #Game .borkenEgg {
+    gap: 200px !important;
   }
 }
 #Game .borkenEgg img {

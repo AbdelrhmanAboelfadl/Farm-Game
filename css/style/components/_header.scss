@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 #Game{
     overflow: hidden;
+    position: relative;
     &::before{
         @include shapeNav($w: 100%, $h: 100%, $color:rgba(0, 0, 0, 0.327), $opacity: 1);
         @include Position($type: absolute, $t:0, $l: 0);
@@ -51,7 +52,7 @@
 
     }
     .start{
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
@@ -59,7 +60,7 @@
         background-color: rgba(0, 0, 0, 0.569);
         z-index: 1010;
         h5{
-            @include responsive(650) {
+            @include responsive(350) {
                 font-size: 15px !important;
             }
         }
@@ -121,9 +122,9 @@
             position: relative;
             width: fit-content;
             img {
-                width: 200px;
+                width: 150px;
                 @include responsive(350) {
-                    width: 150px;;
+                    width: 110px;;
                 }
             }
             
@@ -135,7 +136,7 @@
                 color: white;
                 font-size: 20px;
                 @include responsive(350) {
-                    font-size: 23px;
+                    font-size: 20px;
                 }
             }
         }
@@ -146,11 +147,14 @@
         bottom: 20px;
         @include flexCenter();
         gap: 290px;
-        @include responsive(650) {
-            gap: 130px !important;
+        @include responsive(350) {
+            gap: 60px !important;
         }
         @include responsive(650) {
-            gap: 210px !important;
+            gap: 120px !important;
+        }
+        @include responsive(650) {
+            gap: 200px !important;
         }
         img{
             width: 100px;
