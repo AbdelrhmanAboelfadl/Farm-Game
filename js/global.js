@@ -1,4 +1,3 @@
-
 function startGame() {
     moveEgg(eggs[0], (Math.random() * 10 + 1));
     moveEgg(eggs[1], (Math.random() * 10 + 1));
@@ -90,4 +89,11 @@ function drop(item1, item2) {
 function updateHsore() {
     heighsetScore = localStorage.getItem("heighsetScore");
     $("#hScore").text(heighsetScore);
+}
+function moveBasket(xPosition) {
+    if (xPosition >= halfBasketWidth && xPosition <= ($(window).outerWidth(true) - halfBasketWidth)) {
+        basket.offset({
+            left: xPosition - halfBasketWidth
+        });
+    }
 }

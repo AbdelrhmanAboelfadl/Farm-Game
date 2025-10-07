@@ -14,11 +14,11 @@ if (localStorage.getItem("heighsetScore")== null) {
 }
 console.log(brokenEggs);
 $(window).mousemove(function (e) { 
-    if (e.pageX >= halfBasketWidth && e.pageX <= ($(window).outerWidth(true) - halfBasketWidth)) {
-        basket.offset({
-        left: e.pageX - halfBasketWidth
-    });
-    }
+    moveBasket(e.pageX);
+});
+$(window).on("touchmove", function (e) {
+    let touch = e.originalEvent.touches[0];
+    moveBasket(touch.pageX);
 });
 $("#Start").click(
     function () {
