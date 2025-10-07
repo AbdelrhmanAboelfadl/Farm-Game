@@ -5,13 +5,15 @@ function startGame() {
     isEggInBasket(eggs[0]);
     isEggInBasket(eggs[1]);
     isEggInBasket(eggs[2]);
-    let theGame = requestAnimationFrame(startGame);
+    theGame = requestAnimationFrame(startGame);
     if (LiveScore <= 0) {
         cancelAnimationFrame(theGame);
         $("#Start .startCon h5").text("Game Over -_- Try Again");
         $(".shapeCon .shapes").css({
             "color":"red" 
-            });
+        });
+        musicGame.pause();
+        musicLose.play();
         $("#Start").fadeIn(500);
         if (heighsetScore > localStorage.getItem("heighsetScore")) {
             heighsetScore = score;
@@ -83,6 +85,8 @@ function drop(item1, item2) {
     if (b2 < t1 || l2 > r1 || t2>b1 || r2<l1) {
         return false;
     } else {
+        musicCollect.currentTime = 0;
+        musicCollect.play();
         return true;
     }
 }
@@ -96,4 +100,24 @@ function moveBasket(xPosition) {
             left: xPosition - halfBasketWidth
         });
     }
+}
+function initSwitch(audio, checkbox, key) {
+    let stored = localStorage.getItem(key);
+    if (stored === null) {
+        checkbox.prop("checked", true);
+        audio.muted = false;
+    } else {
+        checkbox.prop("checked", stored === "true" ? true : false);
+        audio.muted = stored === "true" ? false : true;
+    }
+
+    checkbox.on("change", function () {
+        if ($(this).is(":checked")) {
+            audio.muted = false;
+            localStorage.setItem(key, "true");
+        } else {
+            audio.muted = true;
+            localStorage.setItem(key, "false");
+        }
+    });
 }
